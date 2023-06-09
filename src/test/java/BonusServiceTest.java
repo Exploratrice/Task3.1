@@ -98,4 +98,20 @@ public class BonusServiceTest {
         // производим проверку (сравниваем ожидаемый и фактический):
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldCalculateForRegisteredAndBoundaryValueLimit() {
+        BonusService service = new BonusService();
+
+        // подготавливаем данные:
+        long amount = 501;
+        boolean registered = true;
+        long expected = 15;
+
+        // вызываем целевой метод:
+        long actual = service.calculate(amount, registered);
+
+        // производим проверку (сравниваем ожидаемый и фактический):
+        Assertions.assertEquals(expected, actual);
+    }
 }
